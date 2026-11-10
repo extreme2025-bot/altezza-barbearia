@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000">
 <title>Altezza Barbearia — cartão digital</title>
-<meta name="description" content="Barbearia de alto padrão no Jardim Botânico, em Sinop. Escolha seu benefício de primeira visita, agende pelo app ou fale com a gente no WhatsApp.">
+<meta name="description" content="Barbearia de alto padrão no Jardim Botânico, em Sinop. Cupom de 15% na primeira visita, agende pelo app ou fale com a gente no WhatsApp.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://www.altezzabarbearia.com.br/cartao/">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
@@ -43,8 +43,7 @@
   .offer__title { font-family: var(--font-display); font-size: 25px; font-weight: 600; line-height: 1.2; color: var(--fg); }
   .offer__text { color: var(--muted); font-size: 14.5px; }
   .offer__cta { margin-top: 12px; justify-self: start; background: var(--gold); color: var(--gold-ink); font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 999px; }
-  .offer:hover, .offer:focus-visible { border-color: var(--gold); }
-  .offer:hover .offer__cta, .offer:focus-visible .offer__cta { background: var(--gold-2); }
+  .offer__cta--ghost { background: transparent; color: var(--gold-2); border: 1px solid var(--gold); margin-top: 8px; }
   .fine { margin: 12px 0 0; color: var(--muted); font-size: 12.5px; text-align: center; }
   .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .action { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 14px 8px; border-radius: 14px; border: 1px solid var(--line); background: var(--panel); font-weight: 500; font-size: 13.5px; text-align: center; }
@@ -76,24 +75,19 @@
     <p class="invite" id="invite" hidden></p>
   </header>
 
-  <section aria-labelledby="t-offer">
-    <h1 class="lead" id="t-offer">Seu benefício na primeira visita</h1>
-    <p class="lead-sub">Escolha um. O botão abre o WhatsApp da Altezza com a mensagem pronta.</p>
+  <section aria-labelledby="t-offer" id="oferta" hidden>
+    <h1 class="lead" id="t-offer">15% de desconto na primeira visita</h1>
+    <p class="lead-sub">Use o cupom ao agendar ou mostre esta tela na barbearia.</p>
     <div class="offers">
-      <a class="offer" id="offer-cupom" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Quero%20meu%20cupom%20de%20desconto%20de%2015%25." target="_blank" rel="noopener">
-        <span class="offer__kicker">Opção 1</span>
-        <span class="offer__title">15% de desconto</span>
-        <span class="offer__text">No corte, na barba ou nos dois.</span>
-        <span class="offer__cta">Quero meu cupom</span>
-      </a>
-      <a class="offer" id="offer-proc" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Quero%20ganhar%20meu%20procedimento." target="_blank" rel="noopener">
-        <span class="offer__kicker">Opção 2</span>
-        <span class="offer__title">Procedimento de cortesia</span>
-        <span class="offer__text">Junto com o seu corte.</span>
-        <span class="offer__cta">Quero meu procedimento</span>
-      </a>
+      <div class="offer">
+        <span class="offer__kicker">Cupom</span>
+        <span class="offer__title">ALTEZZA15</span>
+        <span class="offer__text">Em serviço avulso: corte, barba ou os dois.</span>
+        <a class="offer__cta" href="https://altezza.barbeiro.app/booking" target="_blank" rel="noopener">Agendar com o cupom</a>
+        <a class="offer__cta offer__cta--ghost" id="offer-cupom" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Quero%20usar%20o%20cupom%20ALTEZZA15%20na%20minha%20primeira%20visita." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+      </div>
     </div>
-    <p class="fine">Válido na primeira visita. Um benefício por pessoa.</p>
+    <p class="fine">Válido até 06/12/2026, na primeira visita. Um uso por cliente. Não vale para planos de assinatura e não é cumulativo.</p>
   </section>
 
   <nav class="actions" aria-label="Agendar e contato">
@@ -150,17 +144,15 @@
 
 <script>
   (function () {
-    var PHONE = "5566992185033";
+    var oferta = document.getElementById("oferta");
+    if (new Date() < new Date("2026-12-07T00:00:00-04:00")) oferta.hidden = false;
     var empresa = "";
     try {
       var raw = new URLSearchParams(window.location.search).get("e") || "";
       empresa = raw.replace(/[^\p{L}\p{N} &.'-]/gu, "").replace(/\s+/g, " ").trim().slice(0, 40);
     } catch (err) { empresa = ""; }
     if (!empresa) return;
-    function wa(msg) { return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg); }
-    var origem = " Vim pela " + empresa + ".";
-    document.getElementById("offer-cupom").href = wa("Olá! Quero meu cupom de desconto de 15%." + origem);
-    document.getElementById("offer-proc").href = wa("Olá! Quero ganhar meu procedimento." + origem);
+    document.getElementById("offer-cupom").href = "https://wa.me/5566992185033?text=" + encodeURIComponent("Olá! Quero usar o cupom ALTEZZA15 na minha primeira visita. Vim pela " + empresa + ".");
     var invite = document.getElementById("invite");
     invite.textContent = "Convite especial · " + empresa;
     invite.hidden = false;
