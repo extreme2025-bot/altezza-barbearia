@@ -45,6 +45,7 @@
   <a class="brand" href="#topo">Altezza</a>
   <nav>
     <a href="#servicos">Serviços</a>
+    <a href="cortes-masculinos/">Cortes</a>
     <a href="#horarios">Horários</a>
     <a href="#contato">Contato</a>
     <a class="keep" href="https://altezza.barbeiro.app" rel="noopener">Agendar</a>
@@ -60,6 +61,14 @@
     <a class="btn" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Altezza." rel="noopener">Chamar no WhatsApp</a>
   </div>
 </div></div>
+
+<section id="cupom" class="promo" hidden><div class="wrap">
+  <p class="kicker">Primeira visita</p>
+  <h2>15% de desconto com o cupom</h2>
+  <button class="code" id="cupom-code" type="button" aria-label="Copiar o cupom ALTEZZA15">ALTEZZA15 <span id="cupom-hint">toque para copiar</span></button>
+  <p class="terms">Válido para serviço avulso na primeira visita, até 06/12/2026. Um uso por cliente. Não vale para planos de assinatura e não é cumulativo.</p>
+  <p><a class="btn solid" href="https://altezza.barbeiro.app/booking" rel="noopener">Agendar com o cupom</a></p>
+</div></section>
 
 <section class="about"><div class="wrap">
   <h2>A experiência Altezza</h2>
@@ -109,7 +118,19 @@
     </div>
   </div>
   <p class="note">Valores, duração e horários disponíveis de cada serviço estão na agenda online.</p>
-  <p style="text-align:center;margin-top:26px"><a class="btn solid" href="https://altezza.barbeiro.app" rel="noopener">Ver valores e horários</a></p>
+  <p style="text-align:center;margin-top:26px"><a class="btn solid" href="https://altezza.barbeiro.app" rel="noopener">Ver valores e horários</a> <a class="btn" href="cortes-masculinos/">Guia de cortes masculinos</a></p>
+</div></section>
+
+<section id="instagram"><div class="wrap">
+  <h2>Altezza no Instagram</h2>
+  <p class="sub">O ambiente, os cortes e a barba, direto do <a href="https://instagram.com/altezzabarbearia" rel="noopener" style="color:var(--gold2)">@altezzabarbearia</a>.</p>
+  <div class="insta">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfSS9faJs3p/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfSS9faJs3p/" rel="noopener">Ver no Instagram</a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfIT5UIJimk/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfIT5UIJimk/" rel="noopener">Ver no Instagram</a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfINMZZJUz6/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfINMZZJUz6/" rel="noopener">Ver no Instagram</a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfDrmv-OOVM/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfDrmv-OOVM/" rel="noopener">Ver no Instagram</a></blockquote>
+  </div>
+  <p style="text-align:center;margin-top:26px"><a class="btn" href="https://instagram.com/altezzabarbearia" rel="noopener">Seguir @altezzabarbearia</a></p>
 </div></section>
 
 <section id="horarios"><div class="wrap">
@@ -143,5 +164,10 @@
 </div></footer>
 <a class="fab" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Altezza." rel="noopener" aria-label="Chamar no WhatsApp">WhatsApp</a>
 <script>document.getElementById('ano').textContent=new Date().getFullYear()</script>
+<script>
+(function(){var fim=new Date('2026-12-07T00:00:00-04:00');var s=document.getElementById('cupom');if(s&&new Date()<fim){s.hidden=false}
+var b=document.getElementById('cupom-code'),t=document.getElementById('cupom-hint');if(b){b.addEventListener('click',function(){var ok=function(){t.textContent='copiado'};if(navigator.clipboard){navigator.clipboard.writeText('ALTEZZA15').then(ok,function(){})}})}})();
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
