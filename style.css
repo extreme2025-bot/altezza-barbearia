@@ -55,3 +55,7 @@ footer a{color:var(--gold2)}
 .guide p{margin-bottom:14px}
 .guide .tag{color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
 .guide a.l{color:var(--gold2);border-bottom:1px solid var(--line)}
+.qr{display:none;margin-top:26px;align-items:center;justify-content:center;gap:16px;color:var(--muted);font-size:.85rem;text-align:left}
+.qr img{border:4px solid var(--gold);background:#fff}
+.qr span{max-width:220px}
+@media(min-width:900px){.qr{display:flex}}

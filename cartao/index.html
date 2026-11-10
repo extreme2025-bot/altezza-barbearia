@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Altezza Barbearia — cartão digital</title>
+<meta name="description" content="Barbearia de alto padrão no Jardim Botânico, em Sinop. Escolha seu benefício de primeira visita, agende pelo app ou fale com a gente no WhatsApp.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.altezzabarbearia.com.br/cartao/">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #000000; --panel: #0f0f0e; --panel-2: #171613; --line: #2a2722;
+    --fg: #f2ede3; --muted: #a39d90; --gold: #d9b35b; --gold-2: #f1d283; --gold-ink: #17120a;
+    --font-display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+    --font-body: "IBM Plex Sans", "Segoe UI", Roboto, system-ui, sans-serif;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  [hidden] { display: none !important; }
+  a:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 3px; border-radius: 12px; }
+  .page { max-width: 460px; margin: 0 auto; padding: 20px max(18px, env(safe-area-inset-right, 0px)) 40px max(18px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 30px; }
+  .brand { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  .brand__logo { width: 176px; height: 176px; }
+  .brand__tag { margin: 0; color: var(--muted); font-size: 15px; max-width: 30ch; text-wrap: balance; }
+  .invite { margin: 8px 0 0; border: 1px solid var(--gold); color: var(--gold-2); border-radius: 999px; padding: 5px 14px; font-size: 13px; letter-spacing: 0.02em; }
+  .lead { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.25; text-align: center; text-wrap: balance; }
+  .lead-sub { margin: 8px auto 0; color: var(--muted); font-size: 14px; text-align: center; max-width: 34ch; text-wrap: balance; }
+  .section-title { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-2); }
+  .section-title::before, .section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .offers { display: grid; gap: 12px; margin-top: 18px; }
+  .offer { display: grid; gap: 2px; padding: 18px 18px 16px; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); }
+  .offer__kicker { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .offer__title { font-family: var(--font-display); font-size: 25px; font-weight: 600; line-height: 1.2; color: var(--fg); }
+  .offer__text { color: var(--muted); font-size: 14.5px; }
+  .offer__cta { margin-top: 12px; justify-self: start; background: var(--gold); color: var(--gold-ink); font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 999px; }
+  .offer:hover, .offer:focus-visible { border-color: var(--gold); }
+  .offer:hover .offer__cta, .offer:focus-visible .offer__cta { background: var(--gold-2); }
+  .fine { margin: 12px 0 0; color: var(--muted); font-size: 12.5px; text-align: center; }
+  .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .action { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 14px 8px; border-radius: 14px; border: 1px solid var(--line); background: var(--panel); font-weight: 500; font-size: 13.5px; text-align: center; }
+  .action:hover { border-color: var(--gold); }
+  .action--primary { grid-column: 1 / -1; flex-direction: row; gap: 10px; padding: 15px; font-size: 16px; font-weight: 600; background: var(--gold); color: var(--gold-ink); border-color: var(--gold); }
+  .action--primary:hover { background: var(--gold-2); border-color: var(--gold-2); }
+  .ico { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; color: var(--gold); }
+  .action--primary .ico { color: var(--gold-ink); }
+  .list { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); overflow: hidden; }
+  .row { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 12px; padding: 13px 16px; border-top: 1px solid var(--line); }
+  .row:first-child { border-top: 0; }
+  .row:hover { background: var(--panel-2); }
+  .row__name { font-weight: 500; }
+  .row__meta { grid-column: 1; color: var(--muted); font-size: 13px; }
+  .row__side { grid-column: 2; grid-row: 1 / span 2; color: var(--gold-2); font-weight: 600; white-space: nowrap; font-size: 14px; }
+  .note { margin: 10px 0 0; color: var(--muted); font-size: 12.5px; text-align: center; }
+  .address { text-align: center; color: var(--muted); font-size: 14px; }
+  .address strong { display: block; color: var(--fg); font-weight: 500; font-size: 15px; }
+  .foot { text-align: center; font-size: 13px; color: var(--muted); }
+  .foot a { color: var(--gold-2); }
+  @media (prefers-reduced-motion: no-preference) { .offer, .offer__cta, .action, .row { transition: border-color 0.15s ease, background-color 0.15s ease; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="brand">
+    <img class="brand__logo" src="../img/logo.jpg" alt="Altezza Barbearia" width="176" height="176">
+    <p class="brand__tag">Ambiente de alto padrão, com conforto e tranquilidade no atendimento.</p>
+    <p class="invite" id="invite" hidden></p>
+  </header>
+
+  <section aria-labelledby="t-offer">
+    <h1 class="lead" id="t-offer">Seu benefício na primeira visita</h1>
+    <p class="lead-sub">Escolha um. O botão abre o WhatsApp da Altezza com a mensagem pronta.</p>
+    <div class="offers">
+      <a class="offer" id="offer-cupom" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Quero%20meu%20cupom%20de%20desconto%20de%2015%25." target="_blank" rel="noopener">
+        <span class="offer__kicker">Opção 1</span>
+        <span class="offer__title">15% de desconto</span>
+        <span class="offer__text">No corte, na barba ou nos dois.</span>
+        <span class="offer__cta">Quero meu cupom</span>
+      </a>
+      <a class="offer" id="offer-proc" href="https://wa.me/5566992185033?text=Ol%C3%A1!%20Quero%20ganhar%20meu%20procedimento." target="_blank" rel="noopener">
+        <span class="offer__kicker">Opção 2</span>
+        <span class="offer__title">Procedimento de cortesia</span>
+        <span class="offer__text">Junto com o seu corte.</span>
+        <span class="offer__cta">Quero meu procedimento</span>
+      </a>
+    </div>
+    <p class="fine">Válido na primeira visita. Um benefício por pessoa.</p>
+  </section>
+
+  <nav class="actions" aria-label="Agendar e contato">
+    <a class="action action--primary" href="https://altezza.barbeiro.app" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+      Agendar horário
+    </a>
+    <a class="action" href="https://www.instagram.com/altezzabarbearia" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6"/></svg>
+      Instagram
+    </a>
+    <a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20dos%20Cedros%2C%20478%2C%20Jardim%20Bot%C3%A2nico%2C%20Sinop%20-%20MT" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+      Como chegar
+    </a>
+    <a class="action" href="https://wa.me/5566992185033" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.2-4.2A8.5 8.5 0 1 1 20.5 12z"/></svg>
+      WhatsApp
+    </a>
+  </nav>
+
+  <section aria-labelledby="t-serv">
+    <h2 class="section-title" id="t-serv">Serviços</h2>
+    <div class="list">
+      <a class="row" href="https://altezza.barbeiro.app/services/corte-2307" target="_blank" rel="noopener"><span class="row__name">Corte Social</span><span class="row__side">Agendar</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/services/low-fade-degrade-baixo-2733" target="_blank" rel="noopener"><span class="row__name">Low Fade – Degradê Baixo</span><span class="row__side">Agendar</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/services/barba-2310" target="_blank" rel="noopener"><span class="row__name">Barba</span><span class="row__side">Agendar</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/services/maquina-geral-2308" target="_blank" rel="noopener"><span class="row__name">Máquina Geral</span><span class="row__side">Agendar</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/services/corte-mirim-ate-12-anos-5813" target="_blank" rel="noopener"><span class="row__name">Corte Mirim (até 12 anos)</span><span class="row__side">Agendar</span></a>
+    </div>
+    <p class="note">Toque no serviço para ver o valor e agendar direto no app. <a href="../" style="color:var(--gold-2)">Ver todos os serviços</a></p>
+  </section>
+
+  <section aria-labelledby="t-plans">
+    <h2 class="section-title" id="t-plans">Assinaturas</h2>
+    <div class="list">
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Style · Semana</span><span class="row__meta">3 cortes por mês · seg a qua</span><span class="row__side">Ver plano</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Style · Livre</span><span class="row__meta">3 cortes por mês · seg a sáb</span><span class="row__side">Ver plano</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Premium · Semana</span><span class="row__meta">2 cortes + 2 barbas por mês · seg a qua</span><span class="row__side">Ver plano</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Premium · Livre</span><span class="row__meta">2 cortes + 2 barbas por mês · seg a sáb · o mais escolhido</span><span class="row__side">Ver plano</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Black</span><span class="row__meta">Corte + barba toda semana · seg a sáb · vagas limitadas</span><span class="row__side">Ver plano</span></a>
+      <a class="row" href="https://altezza.barbeiro.app/membership" target="_blank" rel="noopener"><span class="row__name">Família</span><span class="row__meta">Black + 1 corte mirim por mês (até 12 anos) · vagas limitadas</span><span class="row__side">Ver plano</span></a>
+    </div>
+    <p class="note">Valores e condições atuais no app. Cancele quando quiser.</p>
+  </section>
+
+  <section class="address" aria-label="Endereço">
+    <strong>Rua dos Cedros, 478, sala 02</strong>
+    Jardim Botânico · Sinop - MT
+  </section>
+
+  <footer class="foot"><a href="https://www.instagram.com/altezzabarbearia" target="_blank" rel="noopener">@altezzabarbearia</a> · <a href="../">altezzabarbearia.com.br</a></footer>
+</main>
+
+<script>
+  (function () {
+    var PHONE = "5566992185033";
+    var empresa = "";
+    try {
+      var raw = new URLSearchParams(window.location.search).get("e") || "";
+      empresa = raw.replace(/[^\p{L}\p{N} &.'-]/gu, "").replace(/\s+/g, " ").trim().slice(0, 40);
+    } catch (err) { empresa = ""; }
+    if (!empresa) return;
+    function wa(msg) { return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg); }
+    var origem = " Vim pela " + empresa + ".";
+    document.getElementById("offer-cupom").href = wa("Olá! Quero meu cupom de desconto de 15%." + origem);
+    document.getElementById("offer-proc").href = wa("Olá! Quero ganhar meu procedimento." + origem);
+    var invite = document.getElementById("invite");
+    invite.textContent = "Convite especial · " + empresa;
+    invite.hidden = false;
+  })();
+</script>
+</body>
+</html>
